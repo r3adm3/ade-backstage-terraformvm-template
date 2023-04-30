@@ -23,11 +23,11 @@ jobs:
       run: |
         terraform init
         terraform validate
-        echo 
-        echo ***************************************************************************
-        echo * To use this terraform code, environment variables for TF_ENV_client_id  *
-        echo * and TF_ENV_client_secret from your azure spn and un-rem out the line(s) *
-        echo * below                                                                   *
-        echo ***************************************************************************
+        echo ""
+        echo "***************************************************************************"
+        echo "* To use this terraform code, environment variables for TF_ENV_client_id  *"
+        echo "* and TF_ENV_client_secret from your azure spn and un-rem out the lines   *"
+        echo "* below                                                                   *"
+        echo "***************************************************************************"
         # terraform plan
         # terraform apply -auto-approve
