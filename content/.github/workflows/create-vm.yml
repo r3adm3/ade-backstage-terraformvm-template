@@ -19,8 +19,9 @@ jobs:
     
     
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Initialise and Validate Terraform
       run: |
+        terraform init
         terraform validate
         echo 
         echo ***************************************************************************
