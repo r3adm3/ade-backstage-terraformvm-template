@@ -1,0 +1,32 @@
+name: Terraform Plan
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set Time
+      run: |
+        echo "timestamp=$(date +"%Y-%m-%d-%H-%M-%S")" >> $GITHUB_ENV
+    
+    
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        terraform validate
+        echo 
+        echo ***************************************************************************
+        echo * To use this terraform code, environment variables for TF_ENV_client_id  *
+        echo * and TF_ENV_client_secret from your azure spn and un-rem out the line(s) *
+        echo * below                                                                   *
+        echo ***************************************************************************
+        # terraform plan
+        # terraform apply -auto-approve
