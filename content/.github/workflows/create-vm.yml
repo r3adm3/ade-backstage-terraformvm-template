@@ -29,5 +29,7 @@ jobs:
         echo "* and TF_ENV_client_secret from your azure spn and un-rem out the lines   *"
         echo "* below                                                                   *"
         echo "***************************************************************************"
+        export TF_ENV_client_id="${{ secrets.TF_ENV_client_id }}"
+        export TF_ENV_client_secret="${{ secrets.TF_ENV_client_secret }}"
         # terraform plan
         # terraform apply -auto-approve
