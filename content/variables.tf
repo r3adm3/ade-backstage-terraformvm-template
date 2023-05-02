@@ -12,10 +12,12 @@ variable "resource_group_name_prefix" {
 
 variable "client_id" {
   type = string
+  default = "changeme"
   description = "client id"
 }
 
 variable "client_secret" {
   type = string
+  default = "changeme"
   description = "client secret"
 }
